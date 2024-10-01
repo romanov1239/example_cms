@@ -33,6 +33,9 @@ use dosamigos\tinymce\TinyMce;
 
 
 
+    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>

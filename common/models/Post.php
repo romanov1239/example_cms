@@ -55,7 +55,7 @@ class Post extends \yii\db\ActiveRecord
             'text' => 'Содержание поста',
             'post_category_id' => 'Категория поста',
             'status' => 'Status',
-            'image' => 'Image',
+            'image' => 'Добавить изображение',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
