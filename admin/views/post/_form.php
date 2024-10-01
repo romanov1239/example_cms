@@ -7,6 +7,9 @@ use dosamigos\tinymce\TinyMce;
 /* @var yii\web\View $this */
 /* @var common\models\Post $model */
 /** @var yii\widgets\ActiveForm $form */
+if (!empty($model->errors)) {
+    print_r($model->errors);
+}
 ?>
 
 <div class="post-form">

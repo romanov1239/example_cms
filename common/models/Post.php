@@ -24,10 +24,14 @@ class Post extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
+
     public static function tableName()
     {
         return 'post';
     }
+
+
 
     /**
      * {@inheritdoc}
@@ -35,8 +39,8 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'title', 'text', 'post_category_id', 'status', 'created_at', 'updated_at'], 'required'],
-            [['user_id', 'post_category_id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'text', 'post_category_id', 'status', 'created_at', 'updated_at'], 'required'],
+            [['post_category_id', 'status'], 'integer'],
             [['text'], 'string'],
             [['title', 'image'], 'string', 'max' => 255],
             [['post_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => PostCategory::class, 'targetAttribute' => ['post_category_id' => 'id']],
