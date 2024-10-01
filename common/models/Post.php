@@ -51,9 +51,9 @@ class Post extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'title' => 'Title',
-            'text' => 'Text',
-            'post_category_id' => 'Post Category ID',
+            'title' => 'Название',
+            'text' => 'Содержание поста',
+            'post_category_id' => 'Категория поста',
             'status' => 'Status',
             'image' => 'Image',
             'created_at' => 'Created At',
