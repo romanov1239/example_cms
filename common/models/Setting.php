@@ -3,47 +3,47 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "email_settings".
+ * This is the model class for table "setting".
  *
- * @property int    $id
- * @property string $parameter   Название параметра
- * @property string $value       Значение
+ * @property int $id
+ * @property string $parameter Название параметра
+ * @property string $value Значение
  * @property string $description Описание параметра
  */
-class Setting extends ActiveRecord
+class Setting extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
-    public static function tableName(): string
+    public static function tableName()
     {
-        return '{{%setting}}';
+        return 'setting';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             [['parameter', 'value', 'description'], 'required'],
-            [['parameter', 'value', 'description'], 'string', 'max' => 255],
+            [['parameter'], 'string', 'max' => 100],
+            [['value', 'description'], 'string', 'max' => 255],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'parameter' => Yii::t('app', 'Parameter'),
-            'value' => Yii::t('app', 'Value'),
-            'description' => Yii::t('app', 'Description'),
+            'id' => 'ID',
+            'parameter' => 'Parameter',
+            'value' => 'Value',
+            'description' => 'Description',
         ];
     }
 }

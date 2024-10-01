@@ -4,16 +4,17 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use common\models\Text;
 
 /**
- * TextSearch represents the model behind the search form of `admin\models\Text`.
+ * TextSearch represents the model behind the search form of `common\models\Text`.
  */
 class TextSearch extends Text
 {
     /**
      * {@inheritdoc}
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             [['id'], 'integer'],
@@ -24,7 +25,7 @@ class TextSearch extends Text
     /**
      * {@inheritdoc}
      */
-    public function scenarios(): array
+    public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
@@ -37,7 +38,7 @@ class TextSearch extends Text
      *
      * @return ActiveDataProvider
      */
-    public function search(array $params): ActiveDataProvider
+    public function search($params)
     {
         $query = Text::find();
 

@@ -2,41 +2,44 @@
 
 namespace admin\controllers;
 
-use common\models\{Text, TextSearch};
-use kartik\grid\EditableColumnAction;
-use Throwable;
-use Yii;
-use yii\db\StaleObjectException;
+use common\models\Text;
+use common\models\TextSearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\{NotFoundHttpException, Response};
 
 /**
  * TextController implements the CRUD actions for Text model.
  */
-class TextController extends AdminController
+class TextController extends Controller
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
-    public function behaviors(): array
+    public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::class,
-                'actions' => [
-                    'delete' => ['POST'],
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
+                    ],
                 ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
      * Lists all Text models.
+     *
+     * @return string
      */
-    public function actionIndex(): string
+    public function actionIndex()
     {
         $searchModel = new TextSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -46,10 +49,11 @@ class TextController extends AdminController
 
     /**
      * Displays a single Text model.
-     *
+     * @param int $id ID
+     * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView(int $id): string
+    public function actionView($id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
@@ -59,13 +63,18 @@ class TextController extends AdminController
     /**
      * Creates a new Text model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return string|\yii\web\Response
      */
-    public function actionCreate(): Response|string
+    public function actionCreate()
     {
         $model = new Text();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
@@ -76,14 +85,15 @@ class TextController extends AdminController
     /**
      * Updates an existing Text model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     *
+     * @param int $id ID
+     * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate(int $id): Response|string
+    public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -95,12 +105,11 @@ class TextController extends AdminController
     /**
      * Deletes an existing Text model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     *
+     * @param int $id ID
+     * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
-     * @throws Throwable
-     * @throws StaleObjectException
      */
-    public function actionDelete(int $id): Response
+    public function actionDelete($id)
     {
         $this->findModel($id)->delete();
 
@@ -110,26 +119,16 @@ class TextController extends AdminController
     /**
      * Finds the Text model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     *
+     * @param int $id ID
      * @return Text the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel(int $id): Text
+    protected function findModel($id)
     {
-        if (($model = Text::findOne($id)) !== null) {
+        if (($model = Text::findOne(['id' => $id])) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-    }
-
-    public function actions(): array
-    {
-        return [
-            'change' => [
-                'class' => EditableColumnAction::class,
-                'modelClass' => Text::class,
-            ]
-        ];
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

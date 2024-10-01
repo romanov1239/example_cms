@@ -2,17 +2,14 @@
 
 use yii\helpers\Html;
 
+/** @var yii\web\View $this */
+/** @var common\models\Setting $model */
 
-/**
- * @var $this yii\web\View
- * @var $model common\models\Setting
- */
-
-$this->title = Yii::t('app', 'Create Setting');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Settings'), 'url' => ['index']];
+$this->title = 'Create Setting';
+$this->params['breadcrumbs'][] = ['label' => 'Settings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="email-settings-create">
+<div class="setting-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

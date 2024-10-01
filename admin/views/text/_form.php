@@ -1,12 +1,11 @@
 <?php
 
-use yii\bootstrap5\{ActiveForm, Html};
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
-/**
- * @var $this  yii\web\View
- * @var $model common\models\Text
- * @var $form  yii\widgets\ActiveForm
- */
+/** @var yii\web\View $this */
+/** @var common\models\Text $model */
+/** @var yii\widgets\ActiveForm $form */
 ?>
 
 <div class="text-form">
@@ -15,10 +14,10 @@ use yii\bootstrap5\{ActiveForm, Html};
 
     <?= $form->field($model, 'key')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'value')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'value')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

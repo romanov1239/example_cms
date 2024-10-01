@@ -2,19 +2,15 @@
 
 use yii\helpers\Html;
 
-/**
- * @var $this yii\web\View
- * @var $model common\models\Setting
- */
+/** @var yii\web\View $this */
+/** @var common\models\Setting $model */
 
-$this->title = Yii::t('app', 'Update Setting: ' . $model->id, [
-    'nameAttribute' => '' . $model->id,
-]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Settings'), 'url' => ['index']];
+$this->title = 'Update Setting: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Settings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="email-settings-update">
+<div class="setting-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

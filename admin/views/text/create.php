@@ -1,14 +1,12 @@
 <?php
 
-use yii\bootstrap5\Html;
+use yii\helpers\Html;
 
-/**
- * @var $this  yii\web\View
- * @var $model common\models\Text
- */
+/** @var yii\web\View $this */
+/** @var common\models\Text $model */
 
-$this->title = Yii::t('app', 'Create Text');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Texts'), 'url' => ['index']];
+$this->title = 'Create Text';
+$this->params['breadcrumbs'][] = ['label' => 'Texts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="text-create">

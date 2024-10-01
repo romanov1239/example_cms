@@ -1,36 +1,46 @@
 <?php
 
-use kartik\grid\{EditableColumn, GridView, SerialColumn};
+use common\models\Setting;
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\grid\ActionColumn;
+use yii\grid\GridView;
 
-/**
- * @var $this         yii\web\View
- * @var $dataProvider yii\data\ActiveDataProvider
- */
+/** @var yii\web\View $this */
+/** @var common\models\SettingSearch $searchModel */
+/** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = Yii::t('app', 'Settings');
+$this->title = 'Settings';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="settings-index">
+<div class="setting-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <p>
+        <?= Html::a('Create Setting', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
-            ['class' => SerialColumn::class],
+            ['class' => 'yii\grid\SerialColumn'],
 
+            'id',
             'parameter',
+            'value',
+            'description',
             [
-                'class' => EditableColumn::class,
-                'attribute' => 'value',
-                'editableOptions' => ['formOptions' => ['action' => 'change']],
+                'class' => ActionColumn::className(),
+                'urlCreator' => function ($action, Setting $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'id' => $model->id]);
+                 }
             ],
-            [
-                'class' => EditableColumn::class,
-                'attribute' => 'description',
-                'editableOptions' => ['formOptions' => ['action' => 'change']],
-            ]
-        ]
-    ]) ?>
+        ],
+    ]); ?>
+
+
 </div>
