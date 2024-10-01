@@ -1,15 +1,14 @@
 <?php
 
-use yii\bootstrap5\{Html, ActiveForm};
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
-/**
- * @var $this  yii\web\View
- * @var $model common\models\Setting
- * @var $form  yii\widgets\ActiveForm
- */
+/** @var yii\web\View $this */
+/** @var common\models\Setting $model */
+/** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="email-settings-form">
+<div class="setting-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -20,7 +19,7 @@ use yii\bootstrap5\{Html, ActiveForm};
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

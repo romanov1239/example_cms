@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var common\models\Setting $model */
+/** @var common\models\SocialNetwork $model */
 
-$this->title = 'Create Setting';
-$this->params['breadcrumbs'][] = ['label' => 'Settings', 'url' => ['index']];
+$this->title = 'Create Social Network';
+$this->params['breadcrumbs'][] = ['label' => 'Social Networks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="setting-create">
+<div class="social-network-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

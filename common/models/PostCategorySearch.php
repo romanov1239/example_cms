@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Text;
+use common\models\PostCategory;
 
 /**
- * TextSearch represents the model behind the search form of `common\models\Text`.
+ * PostCategorySearch represents the model behind the search form of `common\models\PostCategory`.
  */
-class TextSearch extends Text
+class PostCategorySearch extends PostCategory
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class TextSearch extends Text
     {
         return [
             [['id'], 'integer'],
-            [['key', 'value'], 'safe'],
+            [['name'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class TextSearch extends Text
      */
     public function search($params)
     {
-        $query = Text::find();
+        $query = PostCategory::find();
 
         // add conditions that should always apply here
 
@@ -61,8 +61,7 @@ class TextSearch extends Text
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'key', $this->key])
-            ->andFilterWhere(['like', 'value', $this->value]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

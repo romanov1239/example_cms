@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Text;
+use common\models\Setting;
 
 /**
- * TextSearch represents the model behind the search form of `common\models\Text`.
+ * SettingSearch represents the model behind the search form of `common\models\Setting`.
  */
-class TextSearch extends Text
+class SettingSearch extends Setting
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class TextSearch extends Text
     {
         return [
             [['id'], 'integer'],
-            [['key', 'value'], 'safe'],
+            [['parameter', 'value', 'description'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class TextSearch extends Text
      */
     public function search($params)
     {
-        $query = Text::find();
+        $query = Setting::find();
 
         // add conditions that should always apply here
 
@@ -61,8 +61,9 @@ class TextSearch extends Text
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'key', $this->key])
-            ->andFilterWhere(['like', 'value', $this->value]);
+        $query->andFilterWhere(['like', 'parameter', $this->parameter])
+            ->andFilterWhere(['like', 'value', $this->value])
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

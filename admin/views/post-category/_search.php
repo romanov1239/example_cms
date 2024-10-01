@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
-/** @var common\models\TextSearch $model */
+/** @var common\models\PostCategorySearch $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="text-search">
+<div class="post-category-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,9 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'key') ?>
-
-    <?= $form->field($model, 'value') ?>
+    <?= $form->field($model, 'name') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

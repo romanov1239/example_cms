@@ -76,10 +76,12 @@ FontAwesomeAsset::register($this);
             ['class' => 'nav-item skip-search']
         );
     } else {
+        $menuItems[] = ['label' => 'Категории постов', 'url' => ['/post-category/index']];
+        $menuItems[] = ['label' => 'Посты', 'url' => ['/post/index']];
         $menuItems[] = ['label' => 'Пользователи', 'url' => ['/user/index']];
-        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
-        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
-        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
+        $menuItems[] = ['label' => 'Настройки', 'url' => ['/setting/index']];
+        $menuItems[] = ['label' => 'Текст', 'url' => ['text/index']];
+        $menuItems[] = ['label' => 'Соц.сети', 'url' => ['social-network/index']];
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     }
     echo Nav::widget([

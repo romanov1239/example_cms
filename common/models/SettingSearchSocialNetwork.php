@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Text;
+use common\models\SocialNetwork;
 
 /**
- * TextSearch represents the model behind the search form of `common\models\Text`.
+ * SettingSearchSocialNetwork represents the model behind the search form of `common\models\SocialNetwork`.
  */
-class TextSearch extends Text
+class SettingSearchSocialNetwork extends SocialNetwork
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class TextSearch extends Text
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['key', 'value'], 'safe'],
+            [['id', 'user_id', 'last_auth_date'], 'integer'],
+            [['social_network_id', 'user_auth_id', 'access_token'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class TextSearch extends Text
      */
     public function search($params)
     {
-        $query = Text::find();
+        $query = SocialNetwork::find();
 
         // add conditions that should always apply here
 
@@ -59,10 +59,13 @@ class TextSearch extends Text
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'user_id' => $this->user_id,
+            'last_auth_date' => $this->last_auth_date,
         ]);
 
-        $query->andFilterWhere(['like', 'key', $this->key])
-            ->andFilterWhere(['like', 'value', $this->value]);
+        $query->andFilterWhere(['like', 'social_network_id', $this->social_network_id])
+            ->andFilterWhere(['like', 'user_auth_id', $this->user_auth_id])
+            ->andFilterWhere(['like', 'access_token', $this->access_token]);
 
         return $dataProvider;
     }

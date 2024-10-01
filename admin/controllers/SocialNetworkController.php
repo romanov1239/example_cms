@@ -2,16 +2,16 @@
 
 namespace admin\controllers;
 
-use common\models\Setting;
-use common\models\SettingSearch;
+use common\models\SocialNetwork;
+use common\models\SettingSearchSocialNetwork;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SettingController implements the CRUD actions for Setting model.
+ * SocialNetworkController implements the CRUD actions for SocialNetwork model.
  */
-class SettingController extends Controller
+class SocialNetworkController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class SettingController extends Controller
     }
 
     /**
-     * Lists all Setting models.
+     * Lists all SocialNetwork models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new SettingSearch();
+        $searchModel = new SettingSearchSocialNetwork();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class SettingController extends Controller
     }
 
     /**
-     * Displays a single Setting model.
+     * Displays a single SocialNetwork model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class SettingController extends Controller
     }
 
     /**
-     * Creates a new Setting model.
+     * Creates a new SocialNetwork model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Setting();
+        $model = new SocialNetwork();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +83,7 @@ class SettingController extends Controller
     }
 
     /**
-     * Updates an existing Setting model.
+     * Updates an existing SocialNetwork model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -103,7 +103,7 @@ class SettingController extends Controller
     }
 
     /**
-     * Deletes an existing Setting model.
+     * Deletes an existing SocialNetwork model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -117,15 +117,15 @@ class SettingController extends Controller
     }
 
     /**
-     * Finds the Setting model based on its primary key value.
+     * Finds the SocialNetwork model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Setting the loaded model
+     * @return SocialNetwork the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Setting::findOne(['id' => $id])) !== null) {
+        if (($model = SocialNetwork::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

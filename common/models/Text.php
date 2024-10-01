@@ -3,29 +3,28 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "text".
  *
- * @property int    $id
+ * @property int $id
  * @property string $key
  * @property string $value
  */
-class Text extends ActiveRecord
+class Text extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
-    public static function tableName(): string
+    public static function tableName()
     {
-        return '{{%text}}';
+        return 'text';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             [['key', 'value'], 'required'],
@@ -37,12 +36,12 @@ class Text extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'key' => Yii::t('app', 'Key'),
-            'value' => Yii::t('app', 'Value'),
+            'id' => 'ID',
+            'key' => 'Key',
+            'value' => 'Value',
         ];
     }
 }

@@ -1,36 +1,45 @@
 <?php
 
-use admin\components\widgets\AdminWidgetHelper;
-use kartik\grid\{ActionColumn, GridView, SerialColumn};
+use common\models\Text;
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\grid\ActionColumn;
+use yii\grid\GridView;
 
-/**
- * @var $this         yii\web\View
- * @var $searchModel  common\models\TextSearch
- * @var $dataProvider yii\data\ActiveDataProvider
- */
+/** @var yii\web\View $this */
+/** @var common\models\TextSearch $searchModel */
+/** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = Yii::t('app', 'Texts');
+$this->title = 'Texts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="text-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+
     <p>
-        <?= Html::a(Yii::t('app', 'Create Text'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Text', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => SerialColumn::class],
+            ['class' => 'yii\grid\SerialColumn'],
 
-            AdminWidgetHelper::getFixedWidthColumn(),
-            AdminWidgetHelper::getEditableItem('key'),
-            AdminWidgetHelper::getEditableItem('value'),
-
-            ['class' => ActionColumn::class],
+            'id',
+            'key',
+            'value:ntext',
+            [
+                'class' => ActionColumn::className(),
+                'urlCreator' => function ($action, Text $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'id' => $model->id]);
+                 }
+            ],
         ],
     ]); ?>
+
+
 </div>

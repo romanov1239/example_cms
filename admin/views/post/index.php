@@ -1,24 +1,24 @@
 <?php
 
-use common\models\Setting;
+use common\models\Post;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var common\models\SettingSearch $searchModel */
+/** @var common\models\PostSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Settings';
+$this->title = 'Posts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="setting-index">
+<div class="post-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Setting', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Post', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,12 +30,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'parameter',
-            'value',
-            'description',
+            'user_id',
+            'title',
+            'text:ntext',
+            'post_category_id',
+            //'status',
+            //'image',
+            //'created_at',
+            //'updated_at',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Setting $model, $key, $index, $column) {
+                'urlCreator' => function ($action, Post $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

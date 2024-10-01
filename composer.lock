@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e21877becd6083cb6ab1a88c96c1e41f",
+    "content-hash": "3cc6dc599643362c18514e9a6c21f496",
     "packages": [
+        {
+            "name": "2amigos/yii2-tinymce-widget",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-tinymce-widget.git",
+                "reference": "a58b7a59a1508f4251a8cea9e010d31c9733bde4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-tinymce-widget/zipball/a58b7a59a1508f4251a8cea9e010d31c9733bde4",
+                "reference": "a58b7a59a1508f4251a8cea9e010d31c9733bde4",
+                "shasum": ""
+            },
+            "require": {
+                "tinymce/tinymce": ">=4",
+                "yiisoft/yii2": "^2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\tinymce\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TinyMCE widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/tinymce-widget",
+            "keywords": [
+                "2amigos",
+                "extension",
+                "tinymce",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/2amigos/yii2-tinymce-widget/issues",
+                "source": "https://github.com/2amigos/yii2-tinymce-widget"
+            },
+            "abandoned": true,
+            "time": "2018-11-01T20:46:52+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v5.3.0-alpha1",
@@ -3963,6 +4028,66 @@
             "time": "2024-04-18T09:32:20+00:00"
         },
         {
+            "name": "tinymce/tinymce",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tinymce/tinymce-dist.git",
+                "reference": "e92ab7adaa3db1752639361ded41a7abb2d28996"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/e92ab7adaa3db1752639361ded41a7abb2d28996",
+                "reference": "e92ab7adaa3db1752639361ded41a7abb2d28996",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "tinymce.js",
+                        "plugins/*/plugin.js",
+                        "themes/*/theme.js",
+                        "models/*/model.js",
+                        "icons/*/icons.js"
+                    ],
+                    "files": [
+                        "tinymce.min.js",
+                        "plugins/*/plugin.min.js",
+                        "themes/*/theme.min.js",
+                        "models/*/model.min.js",
+                        "skins/**",
+                        "icons/*/icons.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Web based JavaScript HTML WYSIWYG editor control.",
+            "homepage": "https://www.tiny.cloud/",
+            "keywords": [
+                "contenteditable",
+                "editing",
+                "html",
+                "javascript",
+                "rich editor",
+                "rich text",
+                "rich text editor",
+                "richtext",
+                "rte",
+                "text",
+                "tinymce",
+                "wysiwyg"
+            ],
+            "support": {
+                "source": "https://github.com/tinymce/tinymce-dist/tree/7.3.0"
+            },
+            "time": "2024-08-07T06:30:33+00:00"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
@@ -4741,16 +4866,16 @@
         },
         {
             "name": "bower-asset/swagger-ui",
-            "version": "v4.17.0",
+            "version": "4.x-dev",
             "source": {
                 "type": "git",
-                "url": "git@github.com:wordnik/swagger-ui.git",
-                "reference": "ea0ee85ee24e724bbd95d76a8f34d97778a045fe"
+                "url": "https://github.com/swagger-api/swagger-ui.git",
+                "reference": "92ffd76d15671954c239fdefb43d1951e06f8bb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wordnik/swagger-ui/zipball/ea0ee85ee24e724bbd95d76a8f34d97778a045fe",
-                "reference": "ea0ee85ee24e724bbd95d76a8f34d97778a045fe"
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/92ffd76d15671954c239fdefb43d1951e06f8bb5",
+                "reference": "92ffd76d15671954c239fdefb43d1951e06f8bb5"
             },
             "type": "bower-asset"
         },
@@ -6256,16 +6381,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.2.0",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "23c79fbbfb725fb92af9bcf41065c8e9a0d49ddb"
+                "reference": "3abf7425cd284141dc5d8d14a9ee444de3345d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/23c79fbbfb725fb92af9bcf41065c8e9a0d49ddb",
-                "reference": "23c79fbbfb725fb92af9bcf41065c8e9a0d49ddb",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/3abf7425cd284141dc5d8d14a9ee444de3345d1a",
+                "reference": "3abf7425cd284141dc5d8d14a9ee444de3345d1a",
                 "shasum": ""
             },
             "require": {
@@ -6308,9 +6433,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.2.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.3.0"
             },
-            "time": "2024-09-15T16:40:33+00:00"
+            "time": "2024-09-29T13:56:26+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -7021,12 +7146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7ad43b6a24177dd844a4ddf8a1da8bdff60c4110"
+                "reference": "5c196904f494bb97ad9935fe4b2cb509857bbe5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7ad43b6a24177dd844a4ddf8a1da8bdff60c4110",
-                "reference": "7ad43b6a24177dd844a4ddf8a1da8bdff60c4110",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5c196904f494bb97ad9935fe4b2cb509857bbe5a",
+                "reference": "5c196904f494bb97ad9935fe4b2cb509857bbe5a",
                 "shasum": ""
             },
             "require": {
@@ -7093,7 +7218,7 @@
                 "issues": "https://github.com/bobthecow/psysh/issues",
                 "source": "https://github.com/bobthecow/psysh/tree/main"
             },
-            "time": "2024-09-26T12:33:34+00:00"
+            "time": "2024-09-29T21:42:50+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -7145,12 +7270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5bd374d4b964c449fc99b871b6d9f139d0b41502"
+                "reference": "6f63660a573ec1e6d48d54ff7c44dfb1e303f30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5bd374d4b964c449fc99b871b6d9f139d0b41502",
-                "reference": "5bd374d4b964c449fc99b871b6d9f139d0b41502",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6f63660a573ec1e6d48d54ff7c44dfb1e303f30d",
+                "reference": "6f63660a573ec1e6d48d54ff7c44dfb1e303f30d",
                 "shasum": ""
             },
             "conflict": {
@@ -7492,7 +7617,7 @@
                 "magneto/core": "<1.9.4.4-dev",
                 "maikuolan/phpmussel": ">=1,<1.6",
                 "mainwp/mainwp": "<=4.4.3.3",
-                "mantisbt/mantisbt": "<2.26.2",
+                "mantisbt/mantisbt": "<=2.26.3",
                 "marcwillmann/turn": "<0.3.3",
                 "matyhtf/framework": "<3.0.6",
                 "mautic/core": "<4.4.13|>=5,<5.1.1",
@@ -7726,6 +7851,7 @@
                 "spoonity/tcpdf": "<6.2.22",
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
                 "ssddanbrown/bookstack": "<24.05.1",
+                "starcitizentools/citizen-skin": ">=2.6.3,<2.31",
                 "statamic/cms": "<4.46|>=5.3,<5.6.2",
                 "stormpath/sdk": "<9.9.99",
                 "studio-42/elfinder": "<=2.1.64",
@@ -7964,7 +8090,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-27T21:04:39+00:00"
+            "time": "2024-09-30T18:06:02+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9257,12 +9383,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "afa87bce0d224a744963ecc8db07b1f0f96a3518"
+                "reference": "b98a9af917cf81ec03cfec4824216fe5f3ed3fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/afa87bce0d224a744963ecc8db07b1f0f96a3518",
-                "reference": "afa87bce0d224a744963ecc8db07b1f0f96a3518",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/b98a9af917cf81ec03cfec4824216fe5f3ed3fcc",
+                "reference": "b98a9af917cf81ec03cfec4824216fe5f3ed3fcc",
                 "shasum": ""
             },
             "require": {
@@ -9313,7 +9439,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-03T13:22:29+00:00"
+            "time": "2024-10-01T08:32:35+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -9480,12 +9606,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "7e9bd70f76fd32c4f01a00877c1c3938f52233bd"
+                "reference": "ae7e10614254ed62daa0774bb3045550d4ca96ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/7e9bd70f76fd32c4f01a00877c1c3938f52233bd",
-                "reference": "7e9bd70f76fd32c4f01a00877c1c3938f52233bd",
+                "url": "https://api.github.com/repos/symfony/string/zipball/ae7e10614254ed62daa0774bb3045550d4ca96ec",
+                "reference": "ae7e10614254ed62daa0774bb3045550d4ca96ec",
                 "shasum": ""
             },
             "require": {
@@ -9559,7 +9685,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-20T08:31:44+00:00"
+            "time": "2024-09-30T20:57:26+00:00"
         },
         {
             "name": "symfony/var-dumper",

@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var common\models\Setting $model */
+/** @var common\models\PostCategory $model */
 
-$this->title = 'Create Setting';
-$this->params['breadcrumbs'][] = ['label' => 'Settings', 'url' => ['index']];
+$this->title = 'Create Post Category';
+$this->params['breadcrumbs'][] = ['label' => 'Post Categories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="setting-create">
+<div class="post-category-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
