@@ -76,7 +76,11 @@ FontAwesomeAsset::register($this);
             ['class' => 'nav-item skip-search']
         );
     } else {
-        $menuItems[] = ['label' => Icon::show('sign-in-alt') . 'Войти', 'url' => ['/views/site/login']];
+        $menuItems[] = ['label' => 'Пользователи', 'url' => ['/user/index']];
+        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
+        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
+        $menuItems[] = ['label' => 'Вs', 'url' => ['/views/site/login']];
+        $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     }
     echo Nav::widget([
         'options' => ['class' => 'nav navbar-nav ms-auto d-flex nav-pills justify-content-between'],

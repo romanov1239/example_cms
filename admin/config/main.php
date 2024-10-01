@@ -161,10 +161,10 @@ return [
             'root' => '/htdocs',
             'suffix' => '',
             'hideRoot' => true,
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            'enablePrettyUrl' => false,
+            'showScriptName' => true,
             'rules' => [
-//                '/' => 'site/index',
+
             ],
         ],
     ],
